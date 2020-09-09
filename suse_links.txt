@@ -1,0 +1,75 @@
+https://documentation.suse.com/sle-ha/12-SP4/html/SLE-HA-all/cha-ha-migration.html#sec-ha-migration-update
+
+https://documentation.suse.com/sle-ha/12-SP4/pdf/art-ha-install-quick_color_en.pdf
+
+https://documentation.suse.com/sle-ha/15-SP1/html/SLE-HA-all/cha-ha-clvm.html#pro-ha-clvm-rsc-lvm-activate
+
+https://www.suse.com/support/kb/doc/?id=000017950
+
+https://documentation.suse.com/sle-ha/12-SP4/html/SLE-HA-all/cha-ha-storage-protect.html#sec-ha-storage-protect-req
+
+
+https://www.suse.com/support/kb/doc/?id=000019396
+
+https://documentation.suse.com/sle-ha/12-SP4/html/SLE-HA-all/cha-ha-storage-protect.html
+
+https://www.mankier.com/8/sbd
+
+pchfpatrm:~ # sbd -d /dev/disk/by-id/wwn-0x6000d3100582a4000000000000000009 dump
+==Dumping header on disk /dev/disk/by-id/wwn-0x6000d3100582a4000000000000000009
+Header version     : 2.1
+UUID               : 90f5427c-4707-45cd-a4ed-22f88d225b00
+Number of slots    : 255
+Sector size        : 512
+Timeout (watchdog) : 30
+Timeout (allocate) : 2
+Timeout (loop)     : 1
+Timeout (msgwait)  : 60
+==Header on disk /dev/disk/by-id/wwn-0x6000d3100582a4000000000000000009 is dumped
+pchfpatrm:~ #
+
+
+sbd -d /dev/SBD -4 60 -1 30 create
+
+wwn-0x6000d3100582a400000000000000000f
+wwn-0x6000d3100582a400000000000000000f
+/wwn-0x6000d3100582a400000000000000000f
+
+wwn-0x6000d3100582a4000000000000000010
+wwn-0x6000d3100582a4000000000000000010
+
+OLD : wwn-0x6000d3100582a4000000000000000009
+
+
+sbd -d /dev/disk/by-id/wwn-0x6000d3100582a400000000000000000f -4 60 -1 30 create
+
+wwn-0x6000d3100582a400000000000000000f
+
+sbd -d /dev/disk/by-id/wwn-0x6000d3100582a4000000000000000010 -4 60 -1 30 create
+
+source /etc/sysconfig/sbd
+
+sbd -d /dev/disk/by-id/wwn-0x6000d3100582a400000000000000000f -D $SBD_OPTS message LOCAL exit
+
+vim /etc/sysconfig/sbd & Add newly added device
+
+EX: SBD_DEVICE="/dev/disk/by-id/wwn-0x6000d3100582a4000000000000000009" | SBD_DEVICE="/dev/SBD1; /dev/SBD2; /dev/SBD3"
+
+vim /etc/sysconfig/sbd
+
+sbd -d /dev/disk/by-id/wwn-0x6000d3100582a400000000000000000f allocate pchfpatrm
+sbd -d /dev/disk/by-id/wwn-0x6000d3100582a400000000000000000f allocate pchfpatrmfo
+
+sbd -d /dev/disk/by-id/wwn-0x6000d3100582a4000000000000000010 allocate pchfpatrm
+sbd -d /dev/disk/by-id/wwn-0x6000d3100582a4000000000000000010 allocate pchfpatrmfo
+
+sbd -d /dev/disk/by-id/wwn-0x6000d3100582a400000000000000000f list
+
+
+
+
+
+
+
+
+

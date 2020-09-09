@@ -1,0 +1,58 @@
+useradd -m vascan
+
+passwd vascan
+
+V@5can@234
+
+#User Created for VAPT Scan and it is used by Security Admin (Wasim)
+vascan ALL=(ALL) NOPASSWD: ALL
+
+vascan:x:1033:100::/home/vascan:/bin/appliancesh
+
+
+
+Username: KPIS_REP
+Password: P@as@1234
+
+https://support.emc.com
+migrate-sles-to-sles4sap-12.3-1.8.noarch.rpm
+migrate-sles-to-sles4sap
+C#e$$~1nF~0520
+PF - Done
+PCHF - Done
+PGL - Done
+ATT - Done
+9209334567 ? 9209434567
+chvg -an 
+lvm.conf
+
+sudo chmod o+w -R /etc/tomcat
+cp jenkins.war /var/lib/tomcat/webapps/
+pchfpatrm
+pchfpatrmfo
+
+73647
+server details and ip:
+10.200.5.24 - pchfddtrm
+10.200.5.26 - pchfqdtrm
+10.200.5.22 - trms4hana
+
+bkpadmin
+bkp@dm!n@123
+
+suse_register -a regcode-sles=61FAC5E07DCDE137 -a email=mariappan.arjunan@piramal.com -a moniker=peltdatt -L /root/.suse_register.log
+
+suse_register -a regoce-sles
+
+
+SR74985 - Development Patching
+SR75034 - Provided supportconfig and sapsysinfo
+SR75001 - Increase 200 GB space
+
+/var/log/service_mon/Service_monitor.log
+
+compress
+    dateext
+    maxage 365
+    rotate 99
+    size=+1024k

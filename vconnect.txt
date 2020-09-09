@@ -1,0 +1,27 @@
+IDC 10.200.4.35
+DR 10.11.41.235
+Infra@123
+
+121.241.251.95
+9820025682
+Adrewgh426hNHUS2&63WSWGbs
+
+supportconfig -r 00198494 -U ftps://support-ftp.us.suse.com/incoming
+
+c0v!$lwde@2020
+BKCPASLMN
+10.200.3.247
+10.200.0.1
+255.255.248.0
+10.200.5.158
+265D4F54787F18
+
+/usr/sap      200 GB
+/sapmnt      75 GB
+/swap          100 GB
+/backup      100 GB
+
+
+firewall-cmd --zone=public --add-port=22/tcp --permanent
+
+svmon -G -O unit=auto
