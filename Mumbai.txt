@@ -1,0 +1,10 @@
+9920585466
+Umesh Jadhav
+
+
+/dev/sda: 599.6 GB
+/dev/sdd: 1649.3 GB
+/dev/sdc: 107.4 GB
+/dev/sdb: 2199.0 GB
+
+202004279377
